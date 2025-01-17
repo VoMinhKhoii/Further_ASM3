@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../../../Style/ViewCustomers.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mocktest_test2.View.ViewOrder">
+    <children>
+        <Text layoutX="418.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="Order" AnchorPane.topAnchor="30.0" />
+        <VBox prefHeight="380.0" prefWidth="890.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="890.0" style="-fx-spacing: 10;" styleClass="upper_button">
+                    <children>
+                        <Button fx:id="createOrderButton" mnemonicParsing="false" text="Create Order">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PLUS" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="deleteOrderButton" mnemonicParsing="false" text="Delete Order">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="TRASH" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="updateOrderButton" mnemonicParsing="false" text="Update Order">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PENCIL" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <TableView fx:id="orderTable" prefHeight="378.0" prefWidth="890.0">
+                    <columns>
+                        <TableColumn fx:id="orderIDColumn" prefWidth="85.48114585876465" text="ID" />
+                        <TableColumn fx:id="orderItemColumn" prefWidth="211.91895294189453" text="Items" />
+                        <TableColumn fx:id="priceColumn" prefWidth="132.37213134765625" text="Price" />
+                  <TableColumn fx:id="orderDateColumn" prefWidth="152.60821533203125" text="Date" />
+                  <TableColumn fx:id="orderCustomerColumn" prefWidth="152.60821533203125" text="Customer" />
+                  <TableColumn fx:id="orderDeliverymanColumn" prefWidth="152.99993896484375" text="Deliveryman" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+        <HBox layoutX="5.0" layoutY="512.0" prefHeight="101.0" prefWidth="243.0">
+            <children>
+                <Button fx:id="returnButton" mnemonicParsing="false" text="Return">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="ARROW_LEFT" styleClass="Fontawesomeiconview" />
+                    </graphic>
+                    <HBox.margin>
+                        <Insets top="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

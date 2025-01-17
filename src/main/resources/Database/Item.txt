@@ -1,0 +1,4 @@
+1,Pizza Margherita,10.99
+2,Cheeseburger,8.99
+3,Caesar Salad,6.49
+4,French Fries,3.49

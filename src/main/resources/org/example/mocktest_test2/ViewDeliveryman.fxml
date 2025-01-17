@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../../../Style/ViewCustomers.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mocktest_test2.View.ViewDeliveryman">
+    <children>
+        <Text layoutX="381.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section-title" text="Deliveryman" AnchorPane.topAnchor="30.0" />
+        <VBox prefHeight="380.0" prefWidth="890.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="890.0" style="-fx-spacing: 10;" styleClass="upper_button">
+                    <children>
+                        <Button fx:id="createDeliveryButton" mnemonicParsing="false" text="Create Deliveryman">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PLUS" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="deleteDeliveryButton" mnemonicParsing="false" text="Delete Deliveryman">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="TRASH" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="updateDeliverymanButton" mnemonicParsing="false" text="Update Deliveryman">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="PENCIL" styleClass="Fontawesomeiconview" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <TableView fx:id="deliverymanTable" prefHeight="378.0" prefWidth="890.0">
+                    <columns>
+                        <TableColumn fx:id="deliverymanIDColumn" prefWidth="85.48114585876465" text="ID" />
+                        <TableColumn fx:id="deliveryNameColumn" prefWidth="297.82936096191406" text="Name" />
+                        <TableColumn fx:id="deliverymanPhoneNumberColumn" prefWidth="209.82220458984375" text="Phone Number" />
+                  <TableColumn fx:id="customerOrderIDColumn" prefWidth="295.5" text="Order" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+        <HBox layoutX="5.0" layoutY="512.0" prefHeight="101.0" prefWidth="243.0">
+            <children>
+                <Button fx:id="returnButton" mnemonicParsing="false" text="Return">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="ARROW_LEFT" styleClass="Fontawesomeiconview" />
+                    </graphic>
+                    <HBox.margin>
+                        <Insets top="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

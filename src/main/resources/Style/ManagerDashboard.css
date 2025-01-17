@@ -1,0 +1,45 @@
+.manager-dashboard{
+    -fx-background-color: #FFFFFF;
+    -fx-alignment: center;
+}
+
+
+.Fontawesomeiconview{
+    -fx-fill: white;
+}
+
+.button {
+    -fx-pref-height: 40;
+    -fx-background-color:  #4c63b5;
+    -fx-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+    -fx-font-family: Inter;
+    -fx-background-radius: 5;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+    -fx-border-width: 0.2;
+}
+
+.logout-button{
+    -fx-pref-height: 40;
+    -fx-background-color: #F0F0F0;
+    -fx-color: black;
+    -fx-text-fill: black;
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+    -fx-font-family: Inter;
+    -fx-background-radius: 5;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+    -fx-border-width: 0.2;
+}
+
+.Fontawesomeiconview{
+    -fx-fill: white;
+}
+
+.button:hover{
+    -fx-cursor: closed_hand;
+}

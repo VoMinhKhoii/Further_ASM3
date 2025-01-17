@@ -1,0 +1,52 @@
+.left-container{
+    -fx-background-radius: 0;
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to bottom, #4c63b5, #98b5e3);
+}
+
+.right-container{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-alignment: center;
+    -fx-spacing: 40;
+}
+
+.button {
+    -fx-pref-height: 40;
+    -fx-background-color: #4c63b5;
+    -fx-color: #4c63b5;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: center;
+    -fx-font-family: Inter;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 2);
+}
+
+.cancel {
+    -fx-pref-height: 40;
+    -fx-background-color: #ed5c5c;
+    -fx-color: #ed5c5c;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: center;
+    -fx-font-family: Inter;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 2);
+}
+
+.button:hover{
+    -fx-cursor: closed_hand;
+}
+
+.section-title{
+    -fx-font: Inter;
+    -fx-font-size: 40px;
+    -fx-padding: 0;
+}
+
+.username-pasword{
+    -fx-alingment: center;
+    -fx-padding: 0 0 0 80;
+    -fx-font-size: 16px;
+}
