@@ -28,13 +28,15 @@ public class ItemRepository {
         try {
             List<String[]> data = CSVUtil.readCsv(FILE_PATH);
             for (String[] row : data) {
-                if (row.length >= 3) {
+                if (row.length >= 3 && isNumeric(row[0]) && isDouble(row[2])) {
                     Item item = new Item(
                             Integer.parseInt(row[0]), // ID
                             row[1], // Name
                             Double.parseDouble(row[2]) // Price
                     );
                     itemCache.put(item.getID(), item);
+                } else {
+                    System.err.println("Invalid row: " + Arrays.toString(row));
                 }
             }
             dataLoaded = true;
@@ -43,35 +45,55 @@ public class ItemRepository {
         }
     }
 
-    public List<Item> findAll() {
+    private boolean isNumeric(String str) {
+        if (str == null || str.isEmpty()) return false;
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private boolean isDouble(String str) {
+        if (str == null || str.isEmpty()) return false;
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public synchronized List<Item> findAll() {
         loadData();
         return new ArrayList<>(itemCache.values());
     }
 
-    public Item findById(int id) {
+    public synchronized Optional<Item> findById(int id) {
         loadData();
-        return itemCache.get(id);
+        return Optional.ofNullable(itemCache.get(id));
     }
 
-    public void save(Item item) {
-        loadData();
-        itemCache.put(item.getID(), item);
-        writeToFile();
-    }
-
-    public void update(Item item) {
+    public synchronized void save(Item item) {
         loadData();
         itemCache.put(item.getID(), item);
         writeToFile();
     }
 
-    public void delete(int id) {
+    public synchronized void update(Item item) {
+        loadData();
+        itemCache.put(item.getID(), item);
+        writeToFile();
+    }
+
+    public synchronized void delete(int id) {
         loadData();
         itemCache.remove(id);
         writeToFile();
     }
 
-    private void writeToFile() {
+    private synchronized void writeToFile() {
         List<String[]> data = new ArrayList<>();
         for (Item item : itemCache.values()) {
             data.add(new String[]{

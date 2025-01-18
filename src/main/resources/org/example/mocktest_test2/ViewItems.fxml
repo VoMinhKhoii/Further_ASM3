@@ -17,7 +17,7 @@
             <children>
                 <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="890.0" style="-fx-spacing: 10;" styleClass="upper_button">
                     <children>
-                        <Button fx:id="createItemrButton" mnemonicParsing="false" text="Create Item">
+                        <Button fx:id="createItemButton" mnemonicParsing="false" text="Create Item">
                             <graphic>
                                 <FontAwesomeIconView glyphName="PLUS" styleClass="Fontawesomeiconview" />
                             </graphic>
@@ -34,9 +34,9 @@
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="ItemTable" prefHeight="378.0" prefWidth="890.0">
+                <TableView fx:id="itemTable" prefHeight="378.0" prefWidth="890.0">
                     <columns>
-                        <TableColumn fx:id="ItemIDColumn" prefWidth="85.48114585876465" text="ID" />
+                        <TableColumn fx:id="itemIDColumn" prefWidth="85.48114585876465" text="ID" />
                         <TableColumn fx:id="itemNameColumn" prefWidth="466.1510467529297" text="Items" />
                         <TableColumn fx:id="itemPriceColumn" prefWidth="337.8489685058594" text="Price" />
                     </columns>

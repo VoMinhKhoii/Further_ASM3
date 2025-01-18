@@ -37,9 +37,8 @@
                 <TableView fx:id="deliverymanTable" prefHeight="378.0" prefWidth="890.0">
                     <columns>
                         <TableColumn fx:id="deliverymanIDColumn" prefWidth="85.48114585876465" text="ID" />
-                        <TableColumn fx:id="deliveryNameColumn" prefWidth="297.82936096191406" text="Name" />
-                        <TableColumn fx:id="deliverymanPhoneNumberColumn" prefWidth="209.82220458984375" text="Phone Number" />
-                  <TableColumn fx:id="customerOrderIDColumn" prefWidth="295.5" text="Order" />
+                        <TableColumn fx:id="deliveryNameColumn" prefWidth="419.71849060058594" text="Name" />
+                        <TableColumn fx:id="deliverymanPhoneNumberColumn" prefWidth="383.78155517578125" text="Phone Number" />
                     </columns>
                 </TableView>
             </children>

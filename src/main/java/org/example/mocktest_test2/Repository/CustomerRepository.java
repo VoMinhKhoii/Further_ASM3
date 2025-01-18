@@ -33,8 +33,7 @@ public class CustomerRepository {
                             Integer.parseInt(row[0]), // ID
                             row[1], // Name
                             row[2], // Phone Number
-                            row[3], // Address
-                            new ArrayList<>() // Empty orders to be resolved later
+                            row[3] // Address
                     );
                     customerCache.put(customer.getID(), customer);
                 }
@@ -81,7 +80,6 @@ public class CustomerRepository {
                     customer.getName(),
                     customer.getPhoneNumber(),
                     customer.getAddress(),
-                    "" // Placeholder for orders, to be resolved in the UI
             });
         }
         try {

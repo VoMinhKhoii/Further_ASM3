@@ -28,14 +28,15 @@ public class DeliverymanRepository {
         try {
             List<String[]> data = CSVUtil.readCsv(FILE_PATH);
             for (String[] row : data) {
-                if (row.length >= 3) {
+                if (row.length >= 3 && isNumeric(row[0])) {
                     Deliveryman deliveryman = new Deliveryman(
                             Integer.parseInt(row[0]), // ID
                             row[1], // Name
-                            row[2], // Phone Number
-                            new ArrayList<>() // Empty orders to be resolved later
+                            row[2]  // Phone Number
                     );
                     deliverymanCache.put(deliveryman.getID(), deliveryman);
+                } else {
+                    System.err.println("Invalid row: " + Arrays.toString(row));
                 }
             }
             dataLoaded = true;
@@ -44,35 +45,45 @@ public class DeliverymanRepository {
         }
     }
 
-    public List<Deliveryman> findAll() {
+    private boolean isNumeric(String str) {
+        if (str == null || str.isEmpty()) return false;
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public synchronized List<Deliveryman> findAll() {
         loadData();
         return new ArrayList<>(deliverymanCache.values());
     }
 
-    public Deliveryman findById(int id) {
+    public synchronized Optional<Deliveryman> findById(int id) {
         loadData();
-        return deliverymanCache.get(id);
+        return Optional.ofNullable(deliverymanCache.get(id));
     }
 
-    public void save(Deliveryman deliveryman) {
-        loadData();
-        deliverymanCache.put(deliveryman.getID(), deliveryman);
-        writeToFile();
-    }
-
-    public void update(Deliveryman deliveryman) {
+    public synchronized void save(Deliveryman deliveryman) {
         loadData();
         deliverymanCache.put(deliveryman.getID(), deliveryman);
         writeToFile();
     }
 
-    public void delete(int id) {
+    public synchronized void update(Deliveryman deliveryman) {
+        loadData();
+        deliverymanCache.put(deliveryman.getID(), deliveryman);
+        writeToFile();
+    }
+
+    public synchronized void delete(int id) {
         loadData();
         deliverymanCache.remove(id);
         writeToFile();
     }
 
-    private void writeToFile() {
+    private synchronized void writeToFile() {
         List<String[]> data = new ArrayList<>();
         for (Deliveryman deliveryman : deliverymanCache.values()) {
             data.add(new String[]{

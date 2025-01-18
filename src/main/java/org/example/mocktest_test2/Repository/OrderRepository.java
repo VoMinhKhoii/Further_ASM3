@@ -51,8 +51,8 @@ public class OrderRepository {
                             new ArrayList<>(), // Items to be resolved later
                             totalPrice,
                             date,
-                            new Customer(customerId, null, null, null, null), // Placeholder customer
-                            new Deliveryman(deliverymanId, null, null, null)  // Placeholder deliveryman
+                            new Customer(customerId, null, null, null), // Placeholder customer
+                            new Deliveryman(deliverymanId, null, null)  // Placeholder deliveryman
                     );
                     orderCache.put(orderId, order);
                 }

@@ -39,8 +39,7 @@
                         <TableColumn fx:id="customerIDColumn" prefWidth="85.48114585876465" text="ID" />
                         <TableColumn fx:id="customerNameColumn" prefWidth="211.8434600830078" text="Name" />
                         <TableColumn fx:id="customerPhoneNumberColumn" prefWidth="173.53933715820312" text="Phone Number" />
-                        <TableColumn fx:id="customerAddressColumn" prefWidth="247.64749145507812" text="Address" />
-                  <TableColumn fx:id="customerOrderIDColumn" prefWidth="169.5" text="Order" />
+                        <TableColumn fx:id="customerAddressColumn" prefWidth="417.5" text="Address" />
                     </columns>
                 </TableView>
             </children>

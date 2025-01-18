@@ -79,9 +79,6 @@ public class ViewCustomer implements Initializable {
         customerAddressColumn.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getAddress())
         );
-        customerOrderIDColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(cellData.getValue().getOrderIDs())
-        );
 
         // Set placeholder for empty table
         customerTable.setPlaceholder(new Label("No customers available."));
